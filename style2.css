@@ -1,0 +1,71 @@
+@font-face {
+    font-family: Dinamit Bold;
+    src: url(dinamit_bold.ttf);
+}
+@font-face {
+    font-family: Gt Cinetype Mono;
+    src: url(gt-cinetype-mono.otf);
+}
+
+body{
+ background-color:black;  
+ font-family: Dinamit Bold;
+ font-size: 55px; 
+}
+
+.container {
+   
+    height: 100vh;
+    margin: 5px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+
+.scene {
+    
+    width: 300px;
+    height: 300px;
+    margin: 75px auto 0;
+    perspective: 1200px;
+  }
+  
+  .cube {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    transform-style: preserve-3d;
+    animation: example 10.5s linear infinite;
+  }
+  
+  
+  .side {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    box-sizing: border-box;
+    /* border: 2px dotted white; */
+    background-color: black;
+    padding: 120px 0;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  
+  .back {
+    transform: translateZ(-150px) rotateY(180deg);
+  }
+  .right {
+    transform: translateX(-150px) rotateY(90deg) rotateY(180deg);
+  }
+  .left {
+    transform: translateX(150px) rotateY(90deg); 
+  }
+  .front {
+    transform: translateZ(150px) ;
+  }
+  
+  
+  @keyframes example {
+    100% { transform: rotateY(-360deg); }
+  }
